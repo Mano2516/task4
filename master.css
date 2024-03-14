@@ -19,7 +19,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
     color: #2196f3;
-    margin-left: 20px;
 }
 .head .nav {
     flex-basis: 75%;
@@ -58,10 +57,11 @@ body {
 .content .container {
     padding-left: 15px;
     padding-right: 15px;
+    margin: 0 auto;
     display: grid;
-    margin-left: 130px;
     grid-template-columns: repeat(auto-fill , minmax(300px,1fr));
-    gap: 50px;
+    gap: 30px;
+    margin-left: 192px;
 }
 .content .container .box {
     box-shadow: 0 0 10px #ddd ;
