@@ -51,17 +51,38 @@ body {
     text-decoration: none;
     color: black;
 }
-.content {
-    padding-top: 80px;
-}
-.content .container {
+.container {
     padding-left: 15px;
     padding-right: 15px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media(min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media(min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media(min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+.content {
+    padding-top: 90px;
+}
+
+.content .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(300px,1fr));
-    gap: 30px;
-    margin-left: 192px;
+    grid-template-columns: repeat(auto-fill ,minmax(300px,1fr));
+    gap: 40px;
+}
+.content .container .box {
+    border: 1px solid;
 }
 .content .container .box {
     box-shadow: 0 0 10px #ddd ;
