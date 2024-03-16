@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px #ddd; flex-wrap: wrap;
 }
 
 .head .logo h2 {
@@ -20,19 +20,49 @@ body {
     font-size: 30px;
     color: #2196f3;
 }
+@media(max-width:767px) {
+    .head .logo  {
+        width: 100%;
+        text-align: center;
+    }
+}
 .head .nav {
     flex-basis: 75%;
 }
-.head .nav ul {
+@media(max-width:767px) {
+    .head .nav {
+        flex-basis: 100%;
+    }
+    .head .nav > ul {
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+}
+.head .nav > ul {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
 }
-.head .nav ul li {
-    
+@media(max-width:767px) {
+    .head .nav > ul {
+        align-items: center;
+        
+        margin: 0 auto;
+        flex-wrap: wrap;
+        margin-left: -20px;
+    }
+}
+.head .nav >ul > li {
     position: relative;
 }
-.head .nav ul li::before {
+@media(max-width:767px) {
+    .head .nav >ul > li {
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+}
+.head .nav >ul > li:not(.cont):before{
     position: absolute;
     content: "";
     width: 0;
@@ -42,15 +72,50 @@ body {
     left: 0px;
     transition: .3s;
 }
-.head .nav ul li:hover::before{
+.head .nav ul > li:hover::before{
     width: 100%;
 }
-
-.head .nav ul li a {
+.head .nav >ul .cont:hover .two {
+    display: block;
+    z-index: 100;
+}
+.head .nav .two {
+    position: absolute;
+    list-style: none;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+    text-align: center;
+    display: none;
+}
+.head .nav .two::before {
+    position: absolute;
+    content: "";
+    border-width: 15px;
+    border-style: solid ;
+    border-color: transparent transparent #eee transparent;
+    top: -22px;
+    left: 50px;
+    transition: .3s;
+}
+.head .nav .two > li {
+    padding: 15px 20px;
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+    transition: .3s;
+}
+.head .nav .two > li:hover {
+    border-color: #2196f3;
+}
+.head .nav .two > li:hover a {
+    color: #2196f3;
+}
+.head .nav ul > li a {
     display: block;
     text-decoration: none;
     color: black;
 }
+
 .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -129,6 +194,13 @@ body {
     width: 90px;
     height: 90px;
     margin: 30px auto;
+    transition: .3s;
+}
+.content .container .box .price:hover {
+    background-color: #2196f3;
+    color: white;
+    border-color: white;
+    
 }
 .content .container .box .info span  {
     margin-bottom: 15px;
